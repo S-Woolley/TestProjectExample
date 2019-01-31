@@ -2,8 +2,8 @@
 {
     public class GetUserResponse
     {
-        public object userId { get; set; }
-        public object givenName { get; set; }
-        public object surname { get; set; }
+        public object UserId { get; set; }
+        public object GivenName { get; set; }
+        public object Surname { get; set; }
     }
 }

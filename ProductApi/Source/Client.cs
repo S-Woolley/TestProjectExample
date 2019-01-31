@@ -7,7 +7,7 @@ namespace ProductApi
     public class Client
     {
         private RestClient WebClient;
-        public Profile.Profile Profile;    
+        public Profile.Profile Profile { get; private set; } 
         
         public CookieCollection Cookies
         {

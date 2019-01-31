@@ -2,7 +2,7 @@
 {
     public class EditNameResponse
     {
-        public object givenName { get; set; }
-        public object surname { get; set; }
+        public object GivenName { get; set; }
+        public object Surname { get; set; }
     }
 }

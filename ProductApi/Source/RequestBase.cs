@@ -5,29 +5,29 @@ namespace ProductApi
 {
     public class ReuestBase
     {
-        private RestClient _client;
+        private RestClient client;
 
         public ReuestBase(RestClient client)
         {
-            _client = client;
+            this.client = client;
         }
 
         protected IRestResponse<T> Execute<T>(RestRequest request) where T : new()
         {            
-            IRestResponse<T> response = _client.Execute<T>(request);
+            IRestResponse<T> response = client.Execute<T>(request);
             return response;
         }
 
         protected IRestResponse Execute(RestRequest request)
         {
-            IRestResponse response = _client.Execute(request);
+            IRestResponse response = client.Execute(request);
             return response;
         }
 
         protected Task<IRestResponse<T>> ExecuteAsync<T>(RestRequest request) where T : new()
         {
             var tcs = new TaskCompletionSource<IRestResponse<T>>();
-            RestRequestAsyncHandle han = _client.ExecuteAsync<T>(request, response =>
+            RestRequestAsyncHandle han = client.ExecuteAsync<T>(request, response =>
             {
                 if (response.ResponseStatus == ResponseStatus.Completed)
                 {
